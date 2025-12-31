@@ -1,5 +1,10 @@
 # AngularBlog
 
+## 🚀 Live Demo
+**Public Blog**: [https://jspractice-app.web.app](https://jspractice-app.web.app)  
+**Admin Panel**: [https://jspractice-app.web.app/admin](https://jspractice-app.web.app/admin)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
 ## Development server
