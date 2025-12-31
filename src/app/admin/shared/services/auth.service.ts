@@ -23,7 +23,7 @@ export class AuthService {
     constructor(private http: HttpClient) { }
 
     get token(): string | null {
-        const expDate = new Date(localStorage.getItem('fb-token-exp')!);
+        const expDate = new Date(localStorage.getItem('fb-token-exp') || '');
         if (new Date() > expDate) {
             this.logout();
             return null;

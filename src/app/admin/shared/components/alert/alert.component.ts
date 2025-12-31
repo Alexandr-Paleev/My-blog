@@ -20,9 +20,9 @@ export class AlertComponent implements OnInit, OnDestroy {
 
     @Input() delay = 5000;
 
-    public text: string = '';
-    public type: string = 'success';
-    aSub: Subscription = new Subscription();
+    public text = '';
+    public type = 'success';
+    aSub = new Subscription();
 
     constructor(private alertService: AlertService) { }
 

@@ -6,11 +6,12 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-admin-layout',
   template: `
     <nav class="navbar">
-      <h1 class="brand" routerLink="/admin/dashboard">MyBlog Admin</h1>
+      <a class="brand" routerLink="/admin/dashboard">MyBlog Admin</a>
       <ul>
-        <li routerLinkActive="active"><a routerLink="/admin/dashboard">Dashboard</a></li>
-        <li routerLinkActive="active"><a routerLink="/admin/create">Create</a></li>
-        <li><a href="#" (click)="logout($event)">Logout</a></li>
+        <li><a routerLink="/">Go to Blog</a></li>
+        <li routerLinkActive="active" *ngIf="auth.isAuthenticated()"><a routerLink="/admin/dashboard">Dashboard</a></li>
+        <li routerLinkActive="active" *ngIf="auth.isAuthenticated()"><a routerLink="/admin/create">Create</a></li>
+        <li *ngIf="auth.isAuthenticated()"><a href="#" (click)="logout($event)">Logout</a></li>
       </ul>
     </nav>
     <div class="container">
@@ -24,13 +25,16 @@ import { AuthService } from '../../services/auth.service';
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--primary-light, #ef5350);
+      background-color: var(--primary-color);
       color: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .brand {
       font-size: 1.5rem;
       font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      opacity: 1 !important;
       cursor: pointer;
     }
     ul { list-style: none; margin: 0; padding: 0; display: flex; }
@@ -54,6 +58,6 @@ export class AdminLayoutComponent implements OnInit {
   logout(event: Event) {
     event.preventDefault();
     this.auth.logout();
-    this.router.navigate(['/admin', 'login']);
+    this.router.navigate(['/admin']);
   }
 }

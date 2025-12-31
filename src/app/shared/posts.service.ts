@@ -19,13 +19,13 @@ export class PostsService {
                 return {
                     ...post,
                     id: response.name,
-                    date: new Date(post.date!)
+                    date: new Date(post.date)
                 };
             }));
     }
 
     getAll(): Observable<Post[]> {
-        return this.http.get(`${environment.fbDbUrl}/posts.json?auth=${this.auth.token}`)
+        return this.http.get(`${environment.fbDbUrl}/posts.json`)
             .pipe(map((response: { [key: string]: any }) => {
                 if (!response) {
                     return [];
@@ -39,11 +39,11 @@ export class PostsService {
     }
 
     getById(id: string): Observable<Post> {
-        return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json?auth=${this.auth.token}`)
+        return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`)
             .pipe(map((post: Post) => {
                 return {
                     ...post, id,
-                    date: new Date(post.date!)
+                    date: new Date(post.date)
                 };
             }));
     }

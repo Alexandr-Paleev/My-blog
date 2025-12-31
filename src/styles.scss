@@ -4,12 +4,12 @@
 
 
 :root {
-    --primary-color: #d32f2f;
-    /* Red 700 */
-    --primary-light: #ef5350;
-    /* Red 400 */
-    --primary-dark: #c62828;
-    /* Red 800 */
+    --primary-color: rgb(220, 53, 69);
+    /* Previously #d32f2f */
+    --primary-light: #e4606d;
+    /* Adjusted for new primary */
+    --primary-dark: #bd2130;
+    /* Adjusted for new primary */
     --text-color: #333;
     --bg-color: #f4f6f8;
 }
@@ -73,7 +73,9 @@ h1,
 h2,
 h3 {
     margin-top: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 .card {
     background: #fff;

@@ -28,7 +28,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.route.params.pipe(
             switchMap((params: Params) => {
-                return this.postsService.getById(params['id']);
+                return this.postsService.getById(params.id);
             })
         ).subscribe((post: Post) => {
             this.post = post;
@@ -53,7 +53,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
         this.submitted = true;
 
         this.uSub = this.postsService.update({
-            ...this.post!,
+            ...this.post,
             text: this.form.value.text,
             title: this.form.value.title
         }).subscribe(() => {
