@@ -1,0 +1,99 @@
+.card {
+  width: 600px;
+  padding: 2rem;
+  margin: 3rem auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  /* border-top: 5px solid var(--primary-color, #d32f2f); */
+  /* Optional accent */
+  box-shadow: none;
+  /* Removed heavy shadow per "red" screenshot request which looked cleaner */
+  border-radius: 4px;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  margin-bottom: 1.5rem;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: .5rem;
+  color: var(--primary-color, #d32f2f);
+  font-weight: 500;
+}
+
+.form-control input {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  /* Important for width 100% */
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: var(--primary-light, #ef5350);
+  box-shadow: 0 0 0 0.2rem rgba(239, 83, 80, 0.25);
+}
+
+.form-control.invalid input {
+  border-color: var(--primary-color, #d32f2f);
+}
+
+.validation {
+  color: var(--primary-color, #d32f2f);
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-link {
+  color: var(--primary-color, #d32f2f);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.btn-login {
+  background-color: #f8f9fa;
+  border-color: #ddd;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-login:hover:not(:disabled) {
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

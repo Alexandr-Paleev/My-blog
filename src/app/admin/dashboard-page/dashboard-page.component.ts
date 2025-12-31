@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PostsService} from '../../shared/posts.service';
-import {Post} from '../../shared/interfaces';
-import {Subscription} from 'rxjs';
-import {AlertService} from '../shared/services/alert.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { PostsService } from '../../shared/posts.service';
+import { Post } from '../../shared/interfaces';
+import { Subscription } from 'rxjs';
+import { AlertService } from '../shared/services/alert.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -15,15 +15,21 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   pSub: Subscription;
   dSub: Subscription;
   searchStr = '';
+  loading = false;
 
   constructor(
     private postsService: PostsService,
     private alert: AlertService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.dSub = this.pSub = this.postsService.getAll().subscribe(posts => {
       this.posts = posts;
+      this.loading = false;
+    }, error => {
+      this.loading = false;
+      console.error(error);
     });
   }
 

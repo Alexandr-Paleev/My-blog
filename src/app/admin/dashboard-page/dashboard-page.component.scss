@@ -1,3 +1,47 @@
-.open {
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  color: #555;
+  border-bottom: 2px solid #e9ecef;
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Action buttons */
+.btn-link {
+  color: var(--primary-color, #d32f2f);
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+  color: var(--primary-dark, #c62828);
+}
+
+a.btn-link,
+button.btn-link {
   margin-right: 10px;
 }

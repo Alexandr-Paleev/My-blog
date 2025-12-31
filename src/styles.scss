@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url('~quill/dist/quill.snow.css');
+@import url('~quill/dist/quill.bubble.css');
+
+
+:root {
+    --primary-color: #d32f2f;
+    /* Red 700 */
+    --primary-light: #ef5350;
+    /* Red 400 */
+    --primary-dark: #c62828;
+    /* Red 800 */
+    --text-color: #333;
+    --bg-color: #f4f6f8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Global Button Styles */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: all .2s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #eee;
+    border-color: #ddd;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #343a40;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.quill-editor-container {
+    margin-bottom: 1.5rem;
+}
+
+.quill-editor-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}

@@ -1,32 +1,28 @@
-<div *ngIf="form; else loading">
+<div *ngIf="form; else loader" class="card">
+  <h2>Edit post</h2>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <div
-      class="form-control"
-      [ngClass]="{invalid: form.get('title') && form.get('title').invalid}"
-    >
-      <label for="title">Enter title:</label>
+
+    <div class="form-group" [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}">
+      <label for="title">Post title</label>
       <input id="title" type="text" formControlName="title">
-      <div
-        *ngIf="form.get('title').touched && form.get('title').invalid"
-        class="validation"
-      >
-        <small *ngIf="form.get('title').errors.required">Please enter title for post</small>
+      <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+        <small *ngIf="form.get('title').errors.required">Title is required</small>
       </div>
     </div>
 
-    <div class="form-control">
+    <div class="quill-editor-container">
+      <label>Post content</label>
       <quill-editor formControlName="text"></quill-editor>
+      <div *ngIf="form.get('text').touched && form.get('text').invalid" class="validation">
+        <small *ngIf="form.get('text').errors.required">Content is required</small>
+      </div>
     </div>
 
-    <button
-      class="btn btn-primary"
-      type="submit"
-      [disabled]="form.invalid || submitted"
-    >Refresh</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid || submitted">Save changes</button>
   </form>
 </div>
 
-<ng-template #loading>
+<ng-template #loader>
   <p class="text-center">Loading...</p>
 </ng-template>

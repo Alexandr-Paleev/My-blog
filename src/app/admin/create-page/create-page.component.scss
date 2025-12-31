@@ -1,4 +1,9 @@
-form {
-  max-width: 600px;
-  margin: 0 auto;
+.validation {
+  color: var(--primary-color);
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.invalid input {
+  border-color: var(--primary-color) !important;
 }
